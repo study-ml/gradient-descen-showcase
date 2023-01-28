@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Gradient Descent (2D example)</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: { inlineMath: [['$', '$']] }
+    });
+  </script>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <div style="border: 1px solid red;" id="fnChart" style="width:700px; height:700px;"></div>
+      </td>
+      <td>
+        <h1>Gradient descent showcase</h1>
+        <p>Please select a function:</p>
+        <input type="radio" id="fn1" onchange="gd2d.handleChange();" name="fn" value="30" checked="checked">
+        <label for="fn1">$ {\displaystyle f(x,y)=-1*\sin \left({\frac {1}{2}}x^{2}-{\frac {1}{4}}y^{2}+3\right)\cos \left(2x+1-e^{y}\right)} $</label><br>
+        <!-- <input type="radio" id="fn2" onchange="handleChange();" name="fn" value="60">
+        <label for="fn2">$ {\displaystyle f(x,y)=(1-x)^{2}+100(y-x^{2})^{2}} $</label>   -->
+        <hr>
+        <button id="btnStart" onclick="gd2d.run();">Start</button>
+        <label for="lr">learning rate: </label>
+        <input id="lr" type="text" value="0.5"></input>
+        <label for="iter">iteration: </label>
+        <input id="iter" type="text" value="30"></input>
+        <hr>
+        <h2>Status:</h2>
+        <div id="currIter"></div>
+        <div id="currX"></div>
+        <div id="currY"></div>
+        <div id="currZ"></div>
+        <div id="gradientX"></div>
+        <div id="gradientY"></div>
+        <div style="border: 1px solid red;" id="xGdLineChart" style="height:200px;"></div>
+        <div style="border: 1px solid red;" id="yGdLineChart" style="height:200px;"></div>
+      </td>
+    </tr>
+  </table>
+  <script src="js/common.js"></script>
+  <script src="js/gd_2d.js"></script>
+  <script> 
+    gd2d.init();
+  </script>
+</body>
+</html>

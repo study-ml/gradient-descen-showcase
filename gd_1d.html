@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Gradient Descent (1D example)</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: { inlineMath: [['$', '$']] }
+    });
+  </script>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <div style="border: 1px solid green;" id="fnChart" style="width:700px; height:600px;"></div>
+      </td>
+      <td>
+        <h1>Gradient descent showcase</h1>
+        <p>Please select a function:</p>
+        <input type="radio" id="fn1" onchange="gd1d.handleChange();" name="fn" value="30" checked="checked">
+        <label for="fn1">$ f(x)=x^2+5x+25 $</label><br>
+        <input type="radio" id="fn2" onchange="gd1d.handleChange();" name="fn" value="60">
+        <label for="fn2">$ f(x)=8(x-10)*sin(0.5x-5)+200 $</label>  
+        <hr>
+        <button id="btnStart" onclick="gd1d.run();">Start</button>
+        <label for="lr">learning rate: </label>
+        <input id="lr" type="text" value="0.05"></input>
+        <label for="iter">iteration: </label>
+        <input id="iter" type="text" value="30"></input>
+        <hr>
+        <h2>Status:</h2>
+        <div id="currIter"></div>
+        <div id="currX"></div>
+        <div id="currY"></div>
+        <div id="gradient"></div>
+        <div style="border: 1px solid green;" id="gLineChart" style="height:200px;"></div>
+      </td>
+    </tr>
+  </table>
+  <script src="js/common.js"></script>
+  <script src="js/gd_1d.js"></script>
+  <script> 
+    gd1d.init();
+  </script>
+</body>
+</html>
